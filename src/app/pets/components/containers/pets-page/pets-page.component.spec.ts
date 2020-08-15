@@ -1,9 +1,12 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
+import { MockComponent } from 'ng-mocks';
 import { PetsPageComponent } from './pets-page.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MenuService } from 'src/app/pets/services/menu/menu.service';
+import { PeopleService } from 'src/app/pets/services/people/people.service';
+import { PetsListComponent } from '../../pets-list/pets-list.component';
+import { MenuComponent } from '../../menu/menu.component';
+import { LoaderComponent } from 'src/app/core/components/loader/loader.component';
 
 describe('PetsPageComponent', () => {
   let component: PetsPageComponent;
@@ -11,7 +14,17 @@ describe('PetsPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PetsPageComponent],
+      imports: [RouterTestingModule],
+      declarations: [
+        PetsPageComponent,
+        MockComponent(PetsListComponent),
+        MockComponent(MenuComponent),
+        MockComponent(LoaderComponent),
+      ],
+      providers: [
+        { provide: MenuService, useValue: jest.fn() },
+        { provide: PeopleService, useValue: jest.fn() },
+      ],
     }).compileComponents();
   }));
 

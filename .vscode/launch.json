@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4200/#",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Attach Chrome",
+      "type": "chrome",
+      "request": "attach",
+      "port": 4200,
+      "url": "http://localhost:4200/#",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Angular",
+      "program": "${workspaceFolder}/node_modules/@angular/cli/bin/ng",
+      "args": ["test", "--", "--watch"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
