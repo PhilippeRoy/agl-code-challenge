@@ -1,7 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-
-import { Notification, NotificationType } from '../../models/notification';
+import { Notification } from '../../models';
+import { NotificationType } from '../../enums/index';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +10,7 @@ export class NotificationService {
   newNotification: number;
   notifications: Array<Notification>;
 
-  constructor(private _toastrService: ToastrService) {
+  constructor(private toastrService: ToastrService) {
     this.newNotification = 0;
     this.notifications = new Array<Notification>();
   }
@@ -24,43 +24,43 @@ export class NotificationService {
   }
 
   /** add notification to list and display with toast message */
-  add(notification: Notification) {
+  add(notification: Notification): void {
     notification.isRead = false;
     this.notifications.unshift(notification);
     this.display(notification);
   }
 
-  display(notification: Notification) {
+  display(notification: Notification): void {
     switch (notification.type) {
       case NotificationType.SUCCESS:
-        this._toastrService.success(notification.message, notification.title);
+        this.toastrService.success(notification.message, notification.title);
         break;
       case NotificationType.WARNING:
-        this._toastrService.warning(notification.message, notification.title);
+        this.toastrService.warning(notification.message, notification.title);
         break;
       case NotificationType.FAIL:
-        this._toastrService.error(notification.message, notification.title);
+        this.toastrService.error(notification.message, notification.title);
         break;
       case NotificationType.INFO:
-        this._toastrService.info(notification.message, notification.title);
+        this.toastrService.info(notification.message, notification.title);
         break;
       default:
-        this._toastrService.info(notification.message, notification.title);
+        this.toastrService.info(notification.message, notification.title);
         break;
     }
   }
 
-  removeByIndex(index: number) {
+  removeByIndex(index: number): void {
     this.notifications.splice(index, 1);
   }
 
-  setNotificationsAsRead() {
+  setNotificationsAsRead(): void {
     for (const notification of this.notifications) {
       notification.isRead = true;
     }
   }
 
-  getUnreadNotifications() {
+  getUnreadNotifications(): number {
     for (const notification of this.notifications) {
       if (!notification.isRead) {
         this.newNotification++;

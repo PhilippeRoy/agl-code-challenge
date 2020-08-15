@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { NotificationService } from '../notifications/notification.service';
-import { NotificationType } from '../../models/notification';
+import { NotificationType } from '../../enums';
 
 @Injectable({
   providedIn: 'root',
@@ -53,7 +53,7 @@ export class ErrorHandlerService {
     } else {
       this.notificationService.display({
         title: 'Error',
-        message: message || 'An error has occured',
+        message: message || 'An error has occurred',
         type: NotificationType.FAIL,
         isRead: false,
       });

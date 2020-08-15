@@ -1,9 +1,4 @@
-﻿class NotificationType {
-  static SUCCESS = 'success';
-  static FAIL = 'fail';
-  static WARNING = 'warning';
-  static INFO = 'info';
-}
+﻿import { NotificationType } from '../enums';
 
 class Notification {
   title: string;
@@ -49,7 +44,6 @@ class InfoNotification extends Notification {
 
 export {
   Notification,
-  NotificationType,
   SuccessNotification,
   WarningNotification,
   FailedNotification,
