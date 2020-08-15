@@ -1,8 +1,10 @@
-<div>
-  {{ genderType }}
-</div>
-<div>
-  <ul>
-    <li *ngFor="let pet of pets">{{ pet.name }}</li>
-  </ul>
+<div class="pet-list">
+  <div class="pet-list__title">
+    {{ genderType }}
+  </div>
+  <div class="pet-list__list">
+    <ul>
+      <li *ngFor="let pet of pets">{{ pet.name }}</li>
+    </ul>
+  </div>
 </div>
