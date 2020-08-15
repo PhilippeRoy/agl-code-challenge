@@ -1,0 +1,17 @@
+<p>pets-page works! {{ animalType }}</p>
+
+<app-pets-list
+  [data]="data"
+  [animalType]="animalType"
+  [genderType]="genderType.Male"
+>
+</app-pets-list>
+
+<app-pets-list
+  [data]="data"
+  [animalType]="animalType"
+  [genderType]="genderType.Female"
+>
+</app-pets-list>
+
+<app-menu></app-menu>

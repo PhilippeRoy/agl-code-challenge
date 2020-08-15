@@ -1,0 +1,18 @@
+<div>
+  <button (click)="closeMenu()" [disabled]="disable">close</button>
+  <a
+    [routerLink]="['/pets/' + animalType.Dog.toLowerCase()]"
+    routerLinkActive="router-link-active"
+    >Dogs</a
+  >
+  <a
+    [routerLink]="['/pets/' + animalType.Cat.toLowerCase()]"
+    routerLinkActive="router-link-active"
+    >Cats</a
+  >
+  <a
+    [routerLink]="['/pets/' + animalType.Fish.toLowerCase()]"
+    routerLinkActive="router-link-active"
+    >Fish</a
+  >
+</div>
