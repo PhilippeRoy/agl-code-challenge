@@ -1,7 +1,7 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PeopleService } from './people.service';
-import { ErrorHandlerService } from 'src/app/core/services/errors/error-handler.service';
+import { ErrorHandlerService } from 'src/app/shared/services/errors/error-handler.service';
 
 describe('Service: People', () => {
   beforeEach(() => {

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { IPeople } from '../../models/people.model';
 import { environment } from 'src/environments/environment';
-import { ErrorHandlerService } from '../../../core/services/errors/error-handler.service';
+import { ErrorHandlerService } from '../../../shared/services/errors/error-handler.service';
 
 /**
  *

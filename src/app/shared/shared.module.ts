@@ -7,4 +7,4 @@ import { LoaderComponent } from './components/loader/loader.component';
   declarations: [LoaderComponent],
   exports: [LoaderComponent],
 })
-export class CoreModule {}
+export class SharedModule {}

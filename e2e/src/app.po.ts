@@ -1,13 +1,30 @@
-import { browser, by, element } from 'protractor';
+import {
+  browser,
+  by,
+  element,
+  ElementArrayFinder,
+  ElementFinder,
+} from 'protractor';
 
 export class AppPage {
   navigateTo(): Promise<unknown> {
-    return browser.get(browser.baseUrl) as Promise<unknown>;
+    return browser.get(browser.baseUrl + '/pets') as Promise<unknown>;
   }
-
-  getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText() as Promise<
-      string
-    >;
+  getMenu(): ElementFinder {
+    return element(by.css('.menu'));
+  }
+  getPageTitle(): ElementFinder {
+    return element(by.css('.pet-type'));
+  }
+  navigateToCat(): Promise<unknown> {
+    return browser.get(browser.baseUrl + '/pets/cat') as Promise<unknown>;
+  }
+  getPetListsCount(gender: string): ElementArrayFinder {
+    return element.all(
+      by.css('.pet-list--' + gender + ' .pet-list__list ul li')
+    );
+  }
+  getPetListTitle(gender: string): ElementFinder {
+    return element(by.css('.pet-list--' + gender + ' .pet-list__title'));
   }
 }

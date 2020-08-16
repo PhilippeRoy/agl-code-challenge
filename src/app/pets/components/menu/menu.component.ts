@@ -1,7 +1,7 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MenuService } from '../../services/menu/menu.service';
 import { Animal } from '../../enums/animals.enum';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +9,6 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit, OnDestroy {
-  @Input() disable: boolean;
   animalType: typeof Animal = Animal;
   $: Subscription;
   menuState: boolean;

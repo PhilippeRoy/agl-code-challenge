@@ -6,7 +6,7 @@ import { MenuService } from 'src/app/pets/services/menu/menu.service';
 import { PeopleService } from 'src/app/pets/services/people/people.service';
 import { PetsListComponent } from '../../pets-list/pets-list.component';
 import { MenuComponent } from '../../menu/menu.component';
-import { LoaderComponent } from 'src/app/core/components/loader/loader.component';
+import { LoaderComponent } from 'src/app/shared/components/loader/loader.component';
 
 describe('PetsPageComponent', () => {
   let component: PetsPageComponent;
