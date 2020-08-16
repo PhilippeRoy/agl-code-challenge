@@ -6,6 +6,12 @@
 
 This coding challenge was built using Angular v10 and the Angular CLI. The project demonstrates Angular best practices. The development has been time boxed, while this limitation prevented the demonstration of advanced concepts such as PWA's, service worker and NGRX it is still engineered to demonstration the many benefits of using Angular and its feature.
 
+[How to](#How-to)
+
+[Angular Best Practices](#Angular-Best-Practices)
+
+[Tests](#Tests)
+
 ## How to
 
 ```bash
@@ -15,19 +21,6 @@ npm install
 # Run application
 npm start
 
-# Run unit tests
-npm test
-
-# Run e2e test
-npm run test:e2e
-
-```
-
-## Tests
-
-Coverage reports will be generated when running `npm test` and can be found under the folder `coverage/`
-
-```bash
 # Run unit tests
 npm test
 
@@ -65,3 +58,24 @@ Below are a few Angular best practices that have been implement that I would lik
 - LIFT
 - T-DRY
 - Folders-by-feature structure
+
+## Tests
+
+Coverage reports will be generated when running `npm test` and can be found under the folder `coverage/`
+
+```bash
+# Run unit tests
+npm test
+
+# Run e2e test
+npm run test:e2e
+
+```
+
+### Unit Tests
+
+![AglCodeChallenge Screenshot](./resources/unit-tests.jpg "AglCodeChallenge Screenshot")
+
+### e2e Tests
+
+![AglCodeChallenge Screenshot](./resources/e2e-tests.jpg "AglCodeChallenge Screenshot")

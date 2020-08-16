@@ -24,6 +24,7 @@ export class PetsPageComponent implements OnInit, OnDestroy {
     private peopleService: PeopleService,
     private menuService: MenuService
   ) {}
+
   ngOnDestroy(): void {
     this.$.unsubscribe();
   }
@@ -33,10 +34,11 @@ export class PetsPageComponent implements OnInit, OnDestroy {
     // fetch new list every time route changes
     this.$ = this.route.paramMap
       .pipe(
-        map((ob) => {
-          const type = ob.get('type');
+        map((param) => {
+          const type = param.get('type');
           this.animalType = type;
           if (!type) {
+            // Force open menu when no animal type is provided
             this.menuService.openMenu();
           }
           return type;

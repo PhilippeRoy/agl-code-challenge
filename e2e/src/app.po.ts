@@ -14,7 +14,7 @@ export class AppPage {
     return element(by.css('.menu'));
   }
   getPageTitle(): ElementFinder {
-    return element(by.css('.pet-type'));
+    return element(by.css('.page-title'));
   }
   navigateToCat(): Promise<unknown> {
     return browser.get(browser.baseUrl + '/pets/cat') as Promise<unknown>;
