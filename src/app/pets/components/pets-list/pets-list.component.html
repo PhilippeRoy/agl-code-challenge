@@ -1,4 +1,4 @@
-<div class="pet-list">
+<div [ngClass]="['pet-list', 'pet-list--' + genderType?.toLowerCase()]">
   <div class="pet-list__title">
     {{ genderType }}
   </div>
@@ -6,5 +6,9 @@
     <ul>
       <li *ngFor="let pet of pets">{{ pet.name }}</li>
     </ul>
+    <div
+      *ngIf="!pets?.length"
+      [ngClass]="['icon', 'icon--' + animalType]"
+    ></div>
   </div>
 </div>

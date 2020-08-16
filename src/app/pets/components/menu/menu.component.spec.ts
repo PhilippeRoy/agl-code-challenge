@@ -5,6 +5,7 @@ import { DebugElement } from '@angular/core';
 import { MenuComponent } from './menu.component';
 import { MenuService } from '../../services/menu/menu.service';
 import { RouterTestingModule } from '@angular/router/testing';
+import { of } from 'rxjs';
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -14,7 +15,14 @@ describe('MenuComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       declarations: [MenuComponent],
-      providers: [{ provide: MenuService, useValue: jest.fn() }],
+      providers: [
+        {
+          provide: MenuService,
+          useValue: {
+            menuState: of(),
+          },
+        },
+      ],
     }).compileComponents();
   }));
 

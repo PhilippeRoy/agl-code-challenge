@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PeopleService } from '../../../services/people/people.service';
 import { Subscription } from 'rxjs';
 import { IPeople } from 'src/app/pets/models';
-import { map, switchMap, finalize } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { Gender } from 'src/app/pets/enums';
 import { MenuService } from 'src/app/pets/services/menu/menu.service';
 
@@ -29,9 +29,10 @@ export class PetsPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    // capture the animal type form the route paramter
+    // fetch new list every time route changes
     this.$ = this.route.paramMap
       .pipe(
-        finalize(() => (this.isLoading = false)),
         map((ob) => {
           const type = ob.get('type');
           this.animalType = type;
@@ -40,7 +41,7 @@ export class PetsPageComponent implements OnInit, OnDestroy {
           }
           return type;
         }),
-        switchMap((ob) => {
+        switchMap(() => {
           this.isLoading = true;
           // NOTE: could make a cache to limit requests
           return this.peopleService.getPeople();
@@ -48,6 +49,11 @@ export class PetsPageComponent implements OnInit, OnDestroy {
       )
       .subscribe((resp) => {
         this.data = resp;
+        this.isLoading = false;
       });
+  }
+
+  openMenu(): void {
+    this.menuService.openMenu();
   }
 }

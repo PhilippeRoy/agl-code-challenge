@@ -1,18 +1,26 @@
-<div>
-  <button (click)="closeMenu()" [disabled]="disable">close</button>
+<div
+  class="menu animate__animated"
+  [ngClass]="{ animate__fadeIn: menuState, animate__fadeOut: !menuState }"
+>
   <a
     [routerLink]="['/pets/' + animalType.Dog.toLowerCase()]"
     routerLinkActive="router-link-active"
-    >Dogs</a
+    class="menu__item"
+    (click)="closeMenu()"
+    >Dog</a
   >
   <a
     [routerLink]="['/pets/' + animalType.Cat.toLowerCase()]"
     routerLinkActive="router-link-active"
-    >Cats</a
+    class="menu__item"
+    (click)="closeMenu()"
+    >Cat</a
   >
   <a
     [routerLink]="['/pets/' + animalType.Fish.toLowerCase()]"
     routerLinkActive="router-link-active"
+    class="menu__item"
+    (click)="closeMenu()"
     >Fish</a
   >
 </div>

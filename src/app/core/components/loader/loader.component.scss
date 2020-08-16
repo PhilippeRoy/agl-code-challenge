@@ -1,0 +1,72 @@
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.loader__item {
+  align-self: center;
+}
+@keyframes ldio-s5ka80s2fx {
+  0% {
+    top: 96px;
+    left: 96px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 18px;
+    left: 18px;
+    width: 156px;
+    height: 156px;
+    opacity: 0;
+  }
+}
+
+.ldio-s5ka80s2fx div {
+  position: absolute;
+  border-width: 4px;
+  border-style: solid;
+  opacity: 1;
+  border-radius: 50%;
+  animation: ldio-s5ka80s2fx 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.ldio-s5ka80s2fx div:nth-child(1) {
+  border-color: #f5bbb9;
+}
+
+.ldio-s5ka80s2fx div:nth-child(2) {
+  border-color: #2c2e54;
+  animation-delay: -0.5s;
+}
+
+.loadingio-spinner-ripple-nyzzcwiws5 {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  background: #f1f2f3;
+}
+.ldio-s5ka80s2fx {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-s5ka80s2fx div {
+  box-sizing: content-box;
+}
+
+.animate__fadeOut {
+  pointer-events: none;
+}

@@ -1,0 +1,30 @@
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.menu__item {
+  align-self: center;
+  text-decoration: none;
+  padding: 50px;
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: var(--blue);
+  &:hover {
+    color: var(--pink);
+  }
+  &.router-link-active {
+    text-decoration: underline;
+  }
+}
+
+.animate__fadeOut {
+  pointer-events: none;
+}

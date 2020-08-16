@@ -1,4 +1,4 @@
-<p>pets-page works! {{ animalType }}</p>
+<div class="pet-type" (click)="openMenu()">{{ animalType }}</div>
 
 <app-pets-list
   [data]="data"
@@ -16,4 +16,4 @@
 
 <app-menu></app-menu>
 
-<app-loader *ngIf="isLoading"></app-loader>
+<app-loader [isLoading]="isLoading"></app-loader>

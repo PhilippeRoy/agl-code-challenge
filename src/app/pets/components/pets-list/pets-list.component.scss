@@ -1,0 +1,54 @@
+.pet-list {
+  display: flex;
+  width: calc(100vw - 15px);
+
+  &--female {
+    flex-direction: row-reverse;
+
+    .pet-list__list,
+    .pet-list__title {
+      background-color: var(--pink);
+      color: var(--blue);
+    }
+  }
+  &--male {
+    .pet-list__list,
+    .pet-list__title {
+      background-color: var(--blue);
+      color: var(--pink);
+    }
+  }
+}
+
+.pet-list__list,
+.pet-list__title {
+  flex: 1;
+  height: calc(50vh - 15px * 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+.pet-list__list {
+  font-size: 3rem;
+}
+.pet-list__title {
+  font-size: 5rem;
+}
+
+.icon {
+  &::before {
+    font-size: 7rem;
+  }
+  &--fish::before {
+    content: "🐟";
+  }
+  &--cat::before {
+    content: "🐱";
+  }
+  &--dog::before {
+    content: "🐶";
+  }
+}

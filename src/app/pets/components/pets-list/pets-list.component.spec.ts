@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PetsListComponent } from './pets-list.component';
 import { Gender, Animal } from '../../enums';
 import { mockData } from '../../../../tests/people-response.mock';
-import { IPet, IPeople } from '../../models';
+import { IPeople } from '../../models';
 import { By } from '@angular/platform-browser';
 import { ChangeDetectionStrategy } from '@angular/core';
 
