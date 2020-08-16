@@ -83,7 +83,8 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
             "scripts": [],
-            "runInBand": true
+            "runInBand": true,
+            "coverage": true
           }
         },
         "lint": {
