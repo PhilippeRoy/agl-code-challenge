@@ -56,7 +56,6 @@ Below are a few Angular best practices that have been implement that I would lik
 ### Application structure and NgModules
 
 - LIFT
-- T-DRY
 - Folders-by-feature structure
 
 ## Tests
